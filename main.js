@@ -60,11 +60,10 @@ const dotsGroup = svg.append("g");
 const annotationGroup = svg.append("g").attr("class", "annotation-group");
 
 // --- DATA LOADING ---
-d3.csv("GLB.Ts+dSST.csv") 
-    .then(
-        rawText => {
+d3.text("GLB.Ts+dSST.csv") 
+    .then(rawText => {
         const lines = rawText.split('\n');
-        const csvText = lines.slice(1).join('\n');
+        const csvText = lines.slice(1).join('\n'); // skip the first line
         const loadedData = d3.csvParse(csvText);
         data = loadedData.map(d => {
             const year = d3.timeParse("%Y")(d.Year);
@@ -94,6 +93,7 @@ d3.csv("GLB.Ts+dSST.csv")
         console.error("Error loading the data:", error);
         document.getElementById('narrative-text').innerText = "Failed to load visualization data. Please check the browser console for details.";
     });
+
 
 // --- SCENE RENDERING LOGIC ---
 function drawScene(sceneNumber) {
