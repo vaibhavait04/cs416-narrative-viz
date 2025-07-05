@@ -60,8 +60,7 @@ const dotsGroup = svg.append("g");
 const annotationGroup = svg.append("g").attr("class", "annotation-group");
 
 // --- DATA LOADING ---
-// d3.text("GLB.Ts+dSST.csv") 
-d3.text("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv") 
+d3.text("GLB.Ts+dSST.csv") 
     .then(rawText => {
         const lines = rawText.split('\n');
         const csvText = lines.slice(1).join('\n'); // skip the first line
