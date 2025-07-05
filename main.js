@@ -60,7 +60,8 @@ const dotsGroup = svg.append("g");
 const annotationGroup = svg.append("g").attr("class", "annotation-group");
 
 // --- DATA LOADING ---
-d3.csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv")
+// *** THIS IS THE ONLY LINE THAT CHANGED ***
+d3.csv("data.csv") 
     .then(loadedData => {
         data = loadedData.map(d => {
             const year = d3.timeParse("%Y")(d.Year);
