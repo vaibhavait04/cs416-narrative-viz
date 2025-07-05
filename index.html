@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrative Visualization: The Rise in Global Temperatures</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-container">
+        <h1>The Rise in Global Temperatures: 1880-Present</h1>
+        <div id="narrative-box">
+            <p id="narrative-text">Loading story...</p>
+        </div>
+        <div id="vis-container">
+            <svg id="visualization"></svg>
+        </div>
+        <div id="controls">
+            <button id="prev-button" class="nav-button" disabled>Previous</button>
+            <span id="scene-indicator">Scene 1 of 3</span>
+            <button id="next-button" class="nav-button">Next</button>
+        </div>
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>
